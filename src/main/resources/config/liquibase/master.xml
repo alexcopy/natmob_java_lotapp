@@ -14,6 +14,7 @@
     <include file="classpath:config/liquibase/changelog/20170220131407_added_entity_EmlBallsAndStarsHitStats.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170220131648_added_entity_NatBallsAndStarsHitStats.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170220131839_added_entity_ThbBallsAndStarsHitStats.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170220133549_added_entity_HitBallsAndStarsPrediction.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
