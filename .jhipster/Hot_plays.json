@@ -36,7 +36,8 @@
         },
         {
             "fieldName": "drawType",
-            "fieldType": "String"
+            "fieldType": "DrawType",
+            "fieldValues": "local, manual, real, other"
         },
         {
             "fieldName": "gameType",
@@ -51,12 +52,15 @@
             "fieldType": "Boolean"
         },
         {
-            "fieldName": "rankId",
+            "fieldName": "rank_id",
             "fieldType": "Integer"
         },
         {
             "fieldName": "sumB",
-            "fieldType": "Integer"
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
         },
         {
             "fieldName": "hash",
@@ -64,10 +68,13 @@
         },
         {
             "fieldName": "timestamp",
-            "fieldType": "Integer"
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
         }
     ],
-    "changelogDate": "20170220142534",
+    "changelogDate": "20170220180817",
     "dto": "no",
     "service": "serviceImpl",
     "entityTableName": "hot_plays",

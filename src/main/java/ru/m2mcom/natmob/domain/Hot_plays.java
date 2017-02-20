@@ -9,6 +9,8 @@ import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+import ru.m2mcom.natmob.domain.enumeration.DrawType;
+
 /**
  * A Hot_plays.
  */
@@ -45,8 +47,9 @@ public class Hot_plays implements Serializable {
     @Column(name = "ball_5")
     private Integer ball5;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "draw_type")
-    private String drawType;
+    private DrawType drawType;
 
     @Column(name = "game_type")
     private String gameType;
@@ -58,15 +61,17 @@ public class Hot_plays implements Serializable {
     private Boolean checked;
 
     @Column(name = "rank_id")
-    private Integer rankId;
+    private Integer rank_id;
 
-    @Column(name = "sum_b")
+    @NotNull
+    @Column(name = "sum_b", nullable = false)
     private Integer sumB;
 
     @Column(name = "hash")
     private String hash;
 
-    @Column(name = "timestamp")
+    @NotNull
+    @Column(name = "timestamp", nullable = false)
     private Integer timestamp;
 
     public Long getId() {
@@ -155,16 +160,16 @@ public class Hot_plays implements Serializable {
         this.ball5 = ball5;
     }
 
-    public String getDrawType() {
+    public DrawType getDrawType() {
         return drawType;
     }
 
-    public Hot_plays drawType(String drawType) {
+    public Hot_plays drawType(DrawType drawType) {
         this.drawType = drawType;
         return this;
     }
 
-    public void setDrawType(String drawType) {
+    public void setDrawType(DrawType drawType) {
         this.drawType = drawType;
     }
 
@@ -207,17 +212,17 @@ public class Hot_plays implements Serializable {
         this.checked = checked;
     }
 
-    public Integer getRankId() {
-        return rankId;
+    public Integer getRank_id() {
+        return rank_id;
     }
 
-    public Hot_plays rankId(Integer rankId) {
-        this.rankId = rankId;
+    public Hot_plays rank_id(Integer rank_id) {
+        this.rank_id = rank_id;
         return this;
     }
 
-    public void setRankId(Integer rankId) {
-        this.rankId = rankId;
+    public void setRank_id(Integer rank_id) {
+        this.rank_id = rank_id;
     }
 
     public Integer getSumB() {
@@ -293,7 +298,7 @@ public class Hot_plays implements Serializable {
             ", gameType='" + gameType + "'" +
             ", prize='" + prize + "'" +
             ", checked='" + checked + "'" +
-            ", rankId='" + rankId + "'" +
+            ", rank_id='" + rank_id + "'" +
             ", sumB='" + sumB + "'" +
             ", hash='" + hash + "'" +
             ", timestamp='" + timestamp + "'" +

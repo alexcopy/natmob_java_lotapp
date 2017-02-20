@@ -29,6 +29,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import ru.m2mcom.natmob.domain.enumeration.DrawType;
 /**
  * Test class for the Hot_playsResource REST controller.
  *
@@ -38,8 +39,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = LotappApp.class)
 public class Hot_playsResourceIntTest {
 
-    private static final String DEFAULT_DRAW_DATE = "46-S9-19";
-    private static final String UPDATED_DRAW_DATE = "20-2-30";
+    private static final String DEFAULT_DRAW_DATE = "03-W1-18";
+    private static final String UPDATED_DRAW_DATE = "21-p-98";
 
     private static final Integer DEFAULT_BALL_1 = 1;
     private static final Integer UPDATED_BALL_1 = 2;
@@ -56,8 +57,8 @@ public class Hot_playsResourceIntTest {
     private static final Integer DEFAULT_BALL_5 = 1;
     private static final Integer UPDATED_BALL_5 = 2;
 
-    private static final String DEFAULT_DRAW_TYPE = "AAAAAAAAAA";
-    private static final String UPDATED_DRAW_TYPE = "BBBBBBBBBB";
+    private static final DrawType DEFAULT_DRAW_TYPE = DrawType.local;
+    private static final DrawType UPDATED_DRAW_TYPE = DrawType.manual;
 
     private static final String DEFAULT_GAME_TYPE = "AAAAAAAAAA";
     private static final String UPDATED_GAME_TYPE = "BBBBBBBBBB";
@@ -129,7 +130,7 @@ public class Hot_playsResourceIntTest {
                 .gameType(DEFAULT_GAME_TYPE)
                 .prize(DEFAULT_PRIZE)
                 .checked(DEFAULT_CHECKED)
-                .rankId(DEFAULT_RANK_ID)
+                .rank_id(DEFAULT_RANK_ID)
                 .sumB(DEFAULT_SUM_B)
                 .hash(DEFAULT_HASH)
                 .timestamp(DEFAULT_TIMESTAMP);
@@ -168,7 +169,7 @@ public class Hot_playsResourceIntTest {
         assertThat(testHot_plays.getGameType()).isEqualTo(DEFAULT_GAME_TYPE);
         assertThat(testHot_plays.getPrize()).isEqualTo(DEFAULT_PRIZE);
         assertThat(testHot_plays.isChecked()).isEqualTo(DEFAULT_CHECKED);
-        assertThat(testHot_plays.getRankId()).isEqualTo(DEFAULT_RANK_ID);
+        assertThat(testHot_plays.getRank_id()).isEqualTo(DEFAULT_RANK_ID);
         assertThat(testHot_plays.getSumB()).isEqualTo(DEFAULT_SUM_B);
         assertThat(testHot_plays.getHash()).isEqualTo(DEFAULT_HASH);
         assertThat(testHot_plays.getTimestamp()).isEqualTo(DEFAULT_TIMESTAMP);
@@ -236,6 +237,42 @@ public class Hot_playsResourceIntTest {
 
     @Test
     @Transactional
+    public void checkSumBIsRequired() throws Exception {
+        int databaseSizeBeforeTest = hot_playsRepository.findAll().size();
+        // set the field null
+        hot_plays.setSumB(null);
+
+        // Create the Hot_plays, which fails.
+
+        restHot_playsMockMvc.perform(post("/api/hot-plays")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(hot_plays)))
+            .andExpect(status().isBadRequest());
+
+        List<Hot_plays> hot_playsList = hot_playsRepository.findAll();
+        assertThat(hot_playsList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkTimestampIsRequired() throws Exception {
+        int databaseSizeBeforeTest = hot_playsRepository.findAll().size();
+        // set the field null
+        hot_plays.setTimestamp(null);
+
+        // Create the Hot_plays, which fails.
+
+        restHot_playsMockMvc.perform(post("/api/hot-plays")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(hot_plays)))
+            .andExpect(status().isBadRequest());
+
+        List<Hot_plays> hot_playsList = hot_playsRepository.findAll();
+        assertThat(hot_playsList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllHot_plays() throws Exception {
         // Initialize the database
         hot_playsRepository.saveAndFlush(hot_plays);
@@ -255,7 +292,7 @@ public class Hot_playsResourceIntTest {
             .andExpect(jsonPath("$.[*].gameType").value(hasItem(DEFAULT_GAME_TYPE.toString())))
             .andExpect(jsonPath("$.[*].prize").value(hasItem(DEFAULT_PRIZE.doubleValue())))
             .andExpect(jsonPath("$.[*].checked").value(hasItem(DEFAULT_CHECKED.booleanValue())))
-            .andExpect(jsonPath("$.[*].rankId").value(hasItem(DEFAULT_RANK_ID)))
+            .andExpect(jsonPath("$.[*].rank_id").value(hasItem(DEFAULT_RANK_ID)))
             .andExpect(jsonPath("$.[*].sumB").value(hasItem(DEFAULT_SUM_B)))
             .andExpect(jsonPath("$.[*].hash").value(hasItem(DEFAULT_HASH.toString())))
             .andExpect(jsonPath("$.[*].timestamp").value(hasItem(DEFAULT_TIMESTAMP)));
@@ -282,7 +319,7 @@ public class Hot_playsResourceIntTest {
             .andExpect(jsonPath("$.gameType").value(DEFAULT_GAME_TYPE.toString()))
             .andExpect(jsonPath("$.prize").value(DEFAULT_PRIZE.doubleValue()))
             .andExpect(jsonPath("$.checked").value(DEFAULT_CHECKED.booleanValue()))
-            .andExpect(jsonPath("$.rankId").value(DEFAULT_RANK_ID))
+            .andExpect(jsonPath("$.rank_id").value(DEFAULT_RANK_ID))
             .andExpect(jsonPath("$.sumB").value(DEFAULT_SUM_B))
             .andExpect(jsonPath("$.hash").value(DEFAULT_HASH.toString()))
             .andExpect(jsonPath("$.timestamp").value(DEFAULT_TIMESTAMP));
@@ -317,7 +354,7 @@ public class Hot_playsResourceIntTest {
                 .gameType(UPDATED_GAME_TYPE)
                 .prize(UPDATED_PRIZE)
                 .checked(UPDATED_CHECKED)
-                .rankId(UPDATED_RANK_ID)
+                .rank_id(UPDATED_RANK_ID)
                 .sumB(UPDATED_SUM_B)
                 .hash(UPDATED_HASH)
                 .timestamp(UPDATED_TIMESTAMP);
@@ -341,7 +378,7 @@ public class Hot_playsResourceIntTest {
         assertThat(testHot_plays.getGameType()).isEqualTo(UPDATED_GAME_TYPE);
         assertThat(testHot_plays.getPrize()).isEqualTo(UPDATED_PRIZE);
         assertThat(testHot_plays.isChecked()).isEqualTo(UPDATED_CHECKED);
-        assertThat(testHot_plays.getRankId()).isEqualTo(UPDATED_RANK_ID);
+        assertThat(testHot_plays.getRank_id()).isEqualTo(UPDATED_RANK_ID);
         assertThat(testHot_plays.getSumB()).isEqualTo(UPDATED_SUM_B);
         assertThat(testHot_plays.getHash()).isEqualTo(UPDATED_HASH);
         assertThat(testHot_plays.getTimestamp()).isEqualTo(UPDATED_TIMESTAMP);
@@ -412,7 +449,7 @@ public class Hot_playsResourceIntTest {
             .andExpect(jsonPath("$.[*].gameType").value(hasItem(DEFAULT_GAME_TYPE.toString())))
             .andExpect(jsonPath("$.[*].prize").value(hasItem(DEFAULT_PRIZE.doubleValue())))
             .andExpect(jsonPath("$.[*].checked").value(hasItem(DEFAULT_CHECKED.booleanValue())))
-            .andExpect(jsonPath("$.[*].rankId").value(hasItem(DEFAULT_RANK_ID)))
+            .andExpect(jsonPath("$.[*].rank_id").value(hasItem(DEFAULT_RANK_ID)))
             .andExpect(jsonPath("$.[*].sumB").value(hasItem(DEFAULT_SUM_B)))
             .andExpect(jsonPath("$.[*].hash").value(hasItem(DEFAULT_HASH.toString())))
             .andExpect(jsonPath("$.[*].timestamp").value(hasItem(DEFAULT_TIMESTAMP)));

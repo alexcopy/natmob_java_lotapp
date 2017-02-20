@@ -68,7 +68,7 @@ class Hot_playsGatlingTest extends Simulation {
             .exec(http("Create new hot_plays")
             .post("/lotapp/api/hot-plays")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "drawDate":"SAMPLE_TEXT", "ball1":"0", "ball2":"0", "ball3":"0", "ball4":"0", "ball5":"0", "drawType":"SAMPLE_TEXT", "gameType":"SAMPLE_TEXT", "prize":null, "checked":null, "rankId":"0", "sumB":"0", "hash":"SAMPLE_TEXT", "timestamp":"0"}""")).asJSON
+            .body(StringBody("""{"id":null, "drawDate":"SAMPLE_TEXT", "ball1":"0", "ball2":"0", "ball3":"0", "ball4":"0", "ball5":"0", "drawType":null, "gameType":"SAMPLE_TEXT", "prize":null, "checked":null, "rank_id":"0", "sumB":"0", "hash":"SAMPLE_TEXT", "timestamp":"0"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_hot_plays_url"))).exitHereIfFailed
             .pause(10)
