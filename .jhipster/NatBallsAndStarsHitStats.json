@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "number",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "statS",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "statL",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ballType",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "timestamp",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170220131648",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "nat_balls_and_stars_hit_stats",
+    "pagination": "no",
+    "microserviceName": "lotapp",
+    "searchEngine": "elasticsearch"
+}
