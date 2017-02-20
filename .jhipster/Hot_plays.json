@@ -1,0 +1,77 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "drawDate",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "(^\\d\\d-\\w+-\\d\\d$)"
+        },
+        {
+            "fieldName": "ball1",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "ball2",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ball3",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ball4",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ball5",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "drawType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gameType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prize",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "checked",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "rankId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "sumB",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "hash",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timestamp",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170220142534",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "hot_plays",
+    "pagination": "no",
+    "microserviceName": "lotapp",
+    "searchEngine": "elasticsearch"
+}
