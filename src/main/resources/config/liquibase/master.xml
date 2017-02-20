@@ -8,6 +8,9 @@
     <include file="classpath:config/liquibase/changelog/20170216132455_added_entity_Eml_history.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170216133336_added_entity_Nat_history.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170216134323_added_entity_Thb_history.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170216183113_added_entity_Thb_plays.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170216183915_added_entity_Eml_plays.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170216184642_added_entity_Nat_plays.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

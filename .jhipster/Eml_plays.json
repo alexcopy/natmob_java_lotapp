@@ -1,0 +1,118 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "drawDate",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "ball1",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "ball2",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "ball3",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "ball4",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "ball5",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "luckyStar1",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "luckyStar2",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "drawType",
+            "fieldType": "DrawType",
+            "fieldValues": "local,manual, real, other",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "gameType",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sumB",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sumS",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "prize",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "rank_id",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "bonus_rank_id",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "checked",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "hash",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170216183915",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "eml_plays",
+    "pagination": "no",
+    "microserviceName": "lotapp",
+    "searchEngine": "elasticsearch"
+}
