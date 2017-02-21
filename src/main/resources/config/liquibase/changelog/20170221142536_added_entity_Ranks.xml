@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Ranks.
+    -->
+    <changeSet id="20170221142536-1" author="jhipster">
+        <createTable tableName="ranks">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="game" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="all_numbers_rank" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="long_odd_even_rank" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="short_odd_even_rank" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="short_history_sum_rank" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="long_hist_sum_rank" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="summ_in_hist_rank" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="been_drawn_in_past" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="summ_in_recent_hist_rank" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="total_rank" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="eml_plays_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="thb_plays_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="nat_plays_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="hot_plays_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,89 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "eml_plays",
+            "otherEntityName": "eml_plays",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "rank_id"
+        },
+        {
+            "relationshipName": "thb_plays",
+            "otherEntityName": "thb_plays",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "rank_id"
+        },
+        {
+            "relationshipName": "nat_plays",
+            "otherEntityName": "nat_plays",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "rank_id"
+        },
+        {
+            "relationshipName": "hot_plays",
+            "otherEntityName": "hot_plays",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "rank_id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "game",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "allNumbersRank",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "longOddEvenRank",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "shortOddEvenRank",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "shortHistorySumRank",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "longHistSumRank",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "summInHistRank",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "beenDrawnInPast",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "summInRecentHistRank",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "totalRank",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170221142536",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "ranks",
+    "pagination": "no",
+    "microserviceName": "lotapp",
+    "searchEngine": "elasticsearch"
+}

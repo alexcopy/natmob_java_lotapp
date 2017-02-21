@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Ranks.
+    -->
+    <changeSet id="20170221142536-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="eml_plays_id"
+                                 baseTableName="ranks"
+                                 constraintName="fk_ranks_eml_plays_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="eml_plays"/>
+
+        <addForeignKeyConstraint baseColumnNames="thb_plays_id"
+                                 baseTableName="ranks"
+                                 constraintName="fk_ranks_thb_plays_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="thb_plays"/>
+
+        <addForeignKeyConstraint baseColumnNames="nat_plays_id"
+                                 baseTableName="ranks"
+                                 constraintName="fk_ranks_nat_plays_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="nat_plays"/>
+
+        <addForeignKeyConstraint baseColumnNames="hot_plays_id"
+                                 baseTableName="ranks"
+                                 constraintName="fk_ranks_hot_plays_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hot_plays"/>
+
+    </changeSet>
+</databaseChangeLog>
