@@ -93,11 +93,11 @@
         },
         {
             "fieldName": "rank_id",
-            "fieldType": "Integer"
+            "fieldType": "Long"
         },
         {
             "fieldName": "bonus_rank_id",
-            "fieldType": "Integer"
+            "fieldType": "Long"
         },
         {
             "fieldName": "checked",

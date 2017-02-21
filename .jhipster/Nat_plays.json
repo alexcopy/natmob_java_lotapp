@@ -78,7 +78,7 @@
         },
         {
             "fieldName": "rank_id",
-            "fieldType": "Integer"
+            "fieldType": "Long"
         },
         {
             "fieldName": "sumB",
