@@ -80,10 +80,10 @@ public class Eml_plays implements Serializable {
     private Double prize;
 
     @Column(name = "rank_id")
-    private Integer rank_id;
+    private Long rank_id;
 
     @Column(name = "bonus_rank_id")
-    private Integer bonus_rank_id;
+    private Long bonus_rank_id;
 
     @Column(name = "checked")
     private Boolean checked=false;
@@ -268,29 +268,29 @@ public class Eml_plays implements Serializable {
         this.prize = prize;
     }
 
-    public Integer getRank_id() {
+    public Long getRank_id() {
         return rank_id;
     }
 
-    public Eml_plays rank_id(Integer rank_id) {
+    public Eml_plays rank_id(Long rank_id) {
         this.rank_id = rank_id;
         return this;
     }
 
-    public void setRank_id(Integer rank_id) {
+    public void setRank_id(Long rank_id) {
         this.rank_id = rank_id;
     }
 
-    public Integer getBonus_rank_id() {
+    public Long getBonus_rank_id() {
         return bonus_rank_id;
     }
 
-    public Eml_plays bonus_rank_id(Integer bonus_rank_id) {
+    public Eml_plays bonus_rank_id(Long bonus_rank_id) {
         this.bonus_rank_id = bonus_rank_id;
         return this;
     }
 
-    public void setBonus_rank_id(Integer bonus_rank_id) {
+    public void setBonus_rank_id(Long bonus_rank_id) {
         this.bonus_rank_id = bonus_rank_id;
     }
 

@@ -72,11 +72,11 @@ public class Thb_playsResourceIntTest {
     private static final Double DEFAULT_PRIZE = 1D;
     private static final Double UPDATED_PRIZE = 2D;
 
-    private static final Integer DEFAULT_RANK_ID = 1;
-    private static final Integer UPDATED_RANK_ID = 2;
+    private static final Long DEFAULT_RANK_ID = 1L;
+    private static final Long UPDATED_RANK_ID = 2L;
 
-    private static final Integer DEFAULT_BONUS_RANK_ID = 1;
-    private static final Integer UPDATED_BONUS_RANK_ID = 2;
+    private static final Long DEFAULT_BONUS_RANK_ID = 1L;
+    private static final Long UPDATED_BONUS_RANK_ID = 2L;
 
     private static final Boolean DEFAULT_CHECKED = false;
     private static final Boolean UPDATED_CHECKED = true;
@@ -412,8 +412,8 @@ public class Thb_playsResourceIntTest {
             .andExpect(jsonPath("$.[*].drawType").value(hasItem(DEFAULT_DRAW_TYPE.toString())))
             .andExpect(jsonPath("$.[*].gameType").value(hasItem(DEFAULT_GAME_TYPE.toString())))
             .andExpect(jsonPath("$.[*].prize").value(hasItem(DEFAULT_PRIZE.doubleValue())))
-            .andExpect(jsonPath("$.[*].rank_id").value(hasItem(DEFAULT_RANK_ID)))
-            .andExpect(jsonPath("$.[*].bonus_rank_id").value(hasItem(DEFAULT_BONUS_RANK_ID)))
+            .andExpect(jsonPath("$.[*].rank_id").value(hasItem(DEFAULT_RANK_ID.intValue())))
+            .andExpect(jsonPath("$.[*].bonus_rank_id").value(hasItem(DEFAULT_BONUS_RANK_ID.intValue())))
             .andExpect(jsonPath("$.[*].checked").value(hasItem(DEFAULT_CHECKED.booleanValue())))
             .andExpect(jsonPath("$.[*].hash").value(hasItem(DEFAULT_HASH.toString())))
             .andExpect(jsonPath("$.[*].timestamp").value(hasItem(DEFAULT_TIMESTAMP)));
@@ -441,8 +441,8 @@ public class Thb_playsResourceIntTest {
             .andExpect(jsonPath("$.drawType").value(DEFAULT_DRAW_TYPE.toString()))
             .andExpect(jsonPath("$.gameType").value(DEFAULT_GAME_TYPE.toString()))
             .andExpect(jsonPath("$.prize").value(DEFAULT_PRIZE.doubleValue()))
-            .andExpect(jsonPath("$.rank_id").value(DEFAULT_RANK_ID))
-            .andExpect(jsonPath("$.bonus_rank_id").value(DEFAULT_BONUS_RANK_ID))
+            .andExpect(jsonPath("$.rank_id").value(DEFAULT_RANK_ID.intValue()))
+            .andExpect(jsonPath("$.bonus_rank_id").value(DEFAULT_BONUS_RANK_ID.intValue()))
             .andExpect(jsonPath("$.checked").value(DEFAULT_CHECKED.booleanValue()))
             .andExpect(jsonPath("$.hash").value(DEFAULT_HASH.toString()))
             .andExpect(jsonPath("$.timestamp").value(DEFAULT_TIMESTAMP));
@@ -577,8 +577,8 @@ public class Thb_playsResourceIntTest {
             .andExpect(jsonPath("$.[*].drawType").value(hasItem(DEFAULT_DRAW_TYPE.toString())))
             .andExpect(jsonPath("$.[*].gameType").value(hasItem(DEFAULT_GAME_TYPE.toString())))
             .andExpect(jsonPath("$.[*].prize").value(hasItem(DEFAULT_PRIZE.doubleValue())))
-            .andExpect(jsonPath("$.[*].rank_id").value(hasItem(DEFAULT_RANK_ID)))
-            .andExpect(jsonPath("$.[*].bonus_rank_id").value(hasItem(DEFAULT_BONUS_RANK_ID)))
+            .andExpect(jsonPath("$.[*].rank_id").value(hasItem(DEFAULT_RANK_ID.intValue())))
+            .andExpect(jsonPath("$.[*].bonus_rank_id").value(hasItem(DEFAULT_BONUS_RANK_ID.intValue())))
             .andExpect(jsonPath("$.[*].checked").value(hasItem(DEFAULT_CHECKED.booleanValue())))
             .andExpect(jsonPath("$.[*].hash").value(hasItem(DEFAULT_HASH.toString())))
             .andExpect(jsonPath("$.[*].timestamp").value(hasItem(DEFAULT_TIMESTAMP)));

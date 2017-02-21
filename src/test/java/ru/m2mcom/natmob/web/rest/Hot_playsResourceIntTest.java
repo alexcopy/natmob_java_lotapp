@@ -69,8 +69,8 @@ public class Hot_playsResourceIntTest {
     private static final Boolean DEFAULT_CHECKED = false;
     private static final Boolean UPDATED_CHECKED = true;
 
-    private static final Integer DEFAULT_RANK_ID = 1;
-    private static final Integer UPDATED_RANK_ID = 2;
+    private static final Long DEFAULT_RANK_ID = 1L;
+    private static final Long UPDATED_RANK_ID = 2L;
 
     private static final Integer DEFAULT_SUM_B = 1;
     private static final Integer UPDATED_SUM_B = 2;
@@ -292,7 +292,7 @@ public class Hot_playsResourceIntTest {
             .andExpect(jsonPath("$.[*].gameType").value(hasItem(DEFAULT_GAME_TYPE.toString())))
             .andExpect(jsonPath("$.[*].prize").value(hasItem(DEFAULT_PRIZE.doubleValue())))
             .andExpect(jsonPath("$.[*].checked").value(hasItem(DEFAULT_CHECKED.booleanValue())))
-            .andExpect(jsonPath("$.[*].rank_id").value(hasItem(DEFAULT_RANK_ID)))
+            .andExpect(jsonPath("$.[*].rank_id").value(hasItem(DEFAULT_RANK_ID.intValue())))
             .andExpect(jsonPath("$.[*].sumB").value(hasItem(DEFAULT_SUM_B)))
             .andExpect(jsonPath("$.[*].hash").value(hasItem(DEFAULT_HASH.toString())))
             .andExpect(jsonPath("$.[*].timestamp").value(hasItem(DEFAULT_TIMESTAMP)));
@@ -319,7 +319,7 @@ public class Hot_playsResourceIntTest {
             .andExpect(jsonPath("$.gameType").value(DEFAULT_GAME_TYPE.toString()))
             .andExpect(jsonPath("$.prize").value(DEFAULT_PRIZE.doubleValue()))
             .andExpect(jsonPath("$.checked").value(DEFAULT_CHECKED.booleanValue()))
-            .andExpect(jsonPath("$.rank_id").value(DEFAULT_RANK_ID))
+            .andExpect(jsonPath("$.rank_id").value(DEFAULT_RANK_ID.intValue()))
             .andExpect(jsonPath("$.sumB").value(DEFAULT_SUM_B))
             .andExpect(jsonPath("$.hash").value(DEFAULT_HASH.toString()))
             .andExpect(jsonPath("$.timestamp").value(DEFAULT_TIMESTAMP));
@@ -449,7 +449,7 @@ public class Hot_playsResourceIntTest {
             .andExpect(jsonPath("$.[*].gameType").value(hasItem(DEFAULT_GAME_TYPE.toString())))
             .andExpect(jsonPath("$.[*].prize").value(hasItem(DEFAULT_PRIZE.doubleValue())))
             .andExpect(jsonPath("$.[*].checked").value(hasItem(DEFAULT_CHECKED.booleanValue())))
-            .andExpect(jsonPath("$.[*].rank_id").value(hasItem(DEFAULT_RANK_ID)))
+            .andExpect(jsonPath("$.[*].rank_id").value(hasItem(DEFAULT_RANK_ID.intValue())))
             .andExpect(jsonPath("$.[*].sumB").value(hasItem(DEFAULT_SUM_B)))
             .andExpect(jsonPath("$.[*].hash").value(hasItem(DEFAULT_HASH.toString())))
             .andExpect(jsonPath("$.[*].timestamp").value(hasItem(DEFAULT_TIMESTAMP)));

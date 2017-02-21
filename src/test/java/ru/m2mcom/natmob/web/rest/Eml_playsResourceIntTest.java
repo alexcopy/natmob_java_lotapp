@@ -78,11 +78,11 @@ public class Eml_playsResourceIntTest {
     private static final Double DEFAULT_PRIZE = 1D;
     private static final Double UPDATED_PRIZE = 2D;
 
-    private static final Integer DEFAULT_RANK_ID = 1;
-    private static final Integer UPDATED_RANK_ID = 2;
+    private static final Long DEFAULT_RANK_ID = 1L;
+    private static final Long UPDATED_RANK_ID = 2L;
 
-    private static final Integer DEFAULT_BONUS_RANK_ID = 1;
-    private static final Integer UPDATED_BONUS_RANK_ID = 2;
+    private static final Long DEFAULT_BONUS_RANK_ID = 1L;
+    private static final Long UPDATED_BONUS_RANK_ID = 2L;
 
     private static final Boolean DEFAULT_CHECKED = false;
     private static final Boolean UPDATED_CHECKED = true;
@@ -454,8 +454,8 @@ public class Eml_playsResourceIntTest {
             .andExpect(jsonPath("$.[*].sumB").value(hasItem(DEFAULT_SUM_B)))
             .andExpect(jsonPath("$.[*].sumS").value(hasItem(DEFAULT_SUM_S.toString())))
             .andExpect(jsonPath("$.[*].prize").value(hasItem(DEFAULT_PRIZE.doubleValue())))
-            .andExpect(jsonPath("$.[*].rank_id").value(hasItem(DEFAULT_RANK_ID)))
-            .andExpect(jsonPath("$.[*].bonus_rank_id").value(hasItem(DEFAULT_BONUS_RANK_ID)))
+            .andExpect(jsonPath("$.[*].rank_id").value(hasItem(DEFAULT_RANK_ID.intValue())))
+            .andExpect(jsonPath("$.[*].bonus_rank_id").value(hasItem(DEFAULT_BONUS_RANK_ID.intValue())))
             .andExpect(jsonPath("$.[*].checked").value(hasItem(DEFAULT_CHECKED.booleanValue())))
             .andExpect(jsonPath("$.[*].hash").value(hasItem(DEFAULT_HASH.toString())));
     }
@@ -484,8 +484,8 @@ public class Eml_playsResourceIntTest {
             .andExpect(jsonPath("$.sumB").value(DEFAULT_SUM_B))
             .andExpect(jsonPath("$.sumS").value(DEFAULT_SUM_S.toString()))
             .andExpect(jsonPath("$.prize").value(DEFAULT_PRIZE.doubleValue()))
-            .andExpect(jsonPath("$.rank_id").value(DEFAULT_RANK_ID))
-            .andExpect(jsonPath("$.bonus_rank_id").value(DEFAULT_BONUS_RANK_ID))
+            .andExpect(jsonPath("$.rank_id").value(DEFAULT_RANK_ID.intValue()))
+            .andExpect(jsonPath("$.bonus_rank_id").value(DEFAULT_BONUS_RANK_ID.intValue()))
             .andExpect(jsonPath("$.checked").value(DEFAULT_CHECKED.booleanValue()))
             .andExpect(jsonPath("$.hash").value(DEFAULT_HASH.toString()));
     }
@@ -549,8 +549,8 @@ public class Eml_playsResourceIntTest {
         assertThat(testEml_plays.getSumB()).isEqualTo(UPDATED_SUM_B);
         assertThat(testEml_plays.getSumS()).isEqualTo(UPDATED_SUM_S);
         assertThat(testEml_plays.getPrize()).isEqualTo(UPDATED_PRIZE);
-        assertThat(testEml_plays.getRank_id()).isEqualTo(UPDATED_RANK_ID);
-        assertThat(testEml_plays.getBonus_rank_id()).isEqualTo(UPDATED_BONUS_RANK_ID);
+        assertThat(testEml_plays.getRank_id()).isEqualTo(UPDATED_RANK_ID.intValue());
+        assertThat(testEml_plays.getBonus_rank_id()).isEqualTo(UPDATED_BONUS_RANK_ID.intValue());
         assertThat(testEml_plays.isChecked()).isEqualTo(UPDATED_CHECKED);
         assertThat(testEml_plays.getHash()).isEqualTo(UPDATED_HASH);
 
@@ -623,8 +623,8 @@ public class Eml_playsResourceIntTest {
             .andExpect(jsonPath("$.[*].sumB").value(hasItem(DEFAULT_SUM_B)))
             .andExpect(jsonPath("$.[*].sumS").value(hasItem(DEFAULT_SUM_S.toString())))
             .andExpect(jsonPath("$.[*].prize").value(hasItem(DEFAULT_PRIZE.doubleValue())))
-            .andExpect(jsonPath("$.[*].rank_id").value(hasItem(DEFAULT_RANK_ID)))
-            .andExpect(jsonPath("$.[*].bonus_rank_id").value(hasItem(DEFAULT_BONUS_RANK_ID)))
+            .andExpect(jsonPath("$.[*].rank_id").value(hasItem(DEFAULT_RANK_ID.intValue())))
+            .andExpect(jsonPath("$.[*].bonus_rank_id").value(hasItem(DEFAULT_BONUS_RANK_ID.intValue())))
             .andExpect(jsonPath("$.[*].checked").value(hasItem(DEFAULT_CHECKED.booleanValue())))
             .andExpect(jsonPath("$.[*].hash").value(hasItem(DEFAULT_HASH.toString())));
     }

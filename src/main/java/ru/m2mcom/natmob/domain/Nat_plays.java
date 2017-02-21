@@ -73,7 +73,7 @@ public class Nat_plays implements Serializable {
     private Boolean checked=false;
 
     @Column(name = "rank_id")
-    private Integer rank_id;
+    private Long rank_id;
 
     @Column(name = "sum_b")
     private Integer sumB;
@@ -245,16 +245,16 @@ public class Nat_plays implements Serializable {
         this.checked = checked;
     }
 
-    public Integer getRank_id() {
+    public Long getRank_id() {
         return rank_id;
     }
 
-    public Nat_plays rank_id(Integer rank_id) {
+    public Nat_plays rank_id(Long rank_id) {
         this.rank_id = rank_id;
         return this;
     }
 
-    public void setRank_id(Integer rank_id) {
+    public void setRank_id(Long rank_id) {
         this.rank_id = rank_id;
     }
 
