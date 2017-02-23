@@ -139,4 +139,10 @@ Desktop.ini
 ######################
 # ESLint
 ######################
-.eslintcache
+.eslintcach
+
+/src/main/resources/config/application-dev.yml
+/src/main/resources/config/application-prod.ymle
+/src/main/resources/config/bootstrap-dev.yml
+/src/main/resources/config/bootstrap-prod.yml
+
