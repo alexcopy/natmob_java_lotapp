@@ -3,7 +3,6 @@ package ru.m2mcom.natmob.web.rest.util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
-
 /**
  * Utility class for HTTP headers creation.
  */
@@ -11,15 +10,15 @@ public final class HeaderUtil {
 
     private static final Logger log = LoggerFactory.getLogger(HeaderUtil.class);
 
-    private static final String APPLICATION_NAME = "lotappApp";
+    private static final String APPLICATION_NAME = "lotmicroApp";
 
     private HeaderUtil() {
     }
 
     public static HttpHeaders createAlert(String message, String param) {
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-lotappApp-alert", message);
-        headers.add("X-lotappApp-params", param);
+        headers.add("X-lotmicroApp-alert", message);
+        headers.add("X-lotmicroApp-params", param);
         return headers;
     }
 
@@ -38,8 +37,8 @@ public final class HeaderUtil {
     public static HttpHeaders createFailureAlert(String entityName, String errorKey, String defaultMessage) {
         log.error("Entity creation failed, {}", defaultMessage);
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-lotappApp-error", "error." + errorKey);
-        headers.add("X-lotappApp-params", entityName);
+        headers.add("X-lotmicroApp-error", "error." + errorKey);
+        headers.add("X-lotmicroApp-params", entityName);
         return headers;
     }
 }

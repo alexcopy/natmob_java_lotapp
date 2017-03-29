@@ -35,11 +35,14 @@ public class LoggingAspect {
      */
     @Pointcut("within(ru.m2mcom.natmob.repository..*) || within(ru.m2mcom.natmob.service..*) || within(ru.m2mcom.natmob.web.rest..*)")
     public void loggingPointcut() {
-        // Method is empty as this is just a Poincut, the implementations are in the advices.
+        // Method is empty as this is just a Pointcut, the implementations are in the advices.
     }
 
     /**
      * Advice that logs methods throwing exceptions.
+     *
+     * @param joinPoint join point for advice
+     * @param e exception
      */
     @AfterThrowing(pointcut = "loggingPointcut()", throwing = "e")
     public void logAfterThrowing(JoinPoint joinPoint, Throwable e) {
@@ -55,6 +58,10 @@ public class LoggingAspect {
 
     /**
      * Advice that logs when a method is entered and exited.
+     *
+     * @param joinPoint join point for advice
+     * @return result
+     * @throws Throwable throws IllegalArgumentException
      */
     @Around("loggingPointcut()")
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {

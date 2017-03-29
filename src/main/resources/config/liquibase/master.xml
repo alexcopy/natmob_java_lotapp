@@ -5,22 +5,6 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170216132455_added_entity_Eml_history.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170216133336_added_entity_Nat_history.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170216134323_added_entity_Thb_history.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170216183113_added_entity_Thb_plays.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170216183915_added_entity_Eml_plays.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170216184642_added_entity_Nat_plays.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170220131407_added_entity_EmlBallsAndStarsHitStats.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170220131648_added_entity_NatBallsAndStarsHitStats.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170220131839_added_entity_ThbBallsAndStarsHitStats.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170220133549_added_entity_HitBallsAndStarsPrediction.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170220140635_added_entity_CombinedBallsAndStarsStats.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170220180817_added_entity_Hot_plays.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170221142536_added_entity_Ranks.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170221145459_added_entity_BonusRanks.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
-    <include file="classpath:config/liquibase/changelog/20170221142536_added_entity_constraints_Ranks.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170221145459_added_entity_constraints_BonusRanks.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

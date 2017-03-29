@@ -1,7 +1,11 @@
 {
   "generator-jhipster": {
-    "jhipsterVersion": "4.0.2",
-    "baseName": "lotapp",
+    "promptValues": {
+      "packageName": "ru.m2mcom.natmob",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "4.1.1",
+    "baseName": "lotmicro",
     "packageName": "ru.m2mcom.natmob",
     "packageFolder": "ru/m2mcom/natmob",
     "serverPort": "8081",
@@ -10,14 +14,14 @@
     "clusteredHttpSession": false,
     "websocket": false,
     "databaseType": "sql",
-    "devDatabaseType": "mariadb",
+    "devDatabaseType": "h2Disk",
     "prodDatabaseType": "mariadb",
     "searchEngine": "elasticsearch",
     "messageBroker": false,
     "serviceDiscoveryType": "eureka",
     "buildTool": "maven",
     "enableSocialSignIn": false,
-    "jwtSecretKey": "f2219d1ae98a7801f14212027a2eef541d86542d",
+    "jwtSecretKey": "6f32c3c723701d30e1d3a3769c7d23001fbf7b01",
     "enableTranslation": true,
     "applicationType": "microservice",
     "testFrameworks": [

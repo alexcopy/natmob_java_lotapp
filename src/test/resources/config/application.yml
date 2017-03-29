@@ -17,17 +17,19 @@ eureka:
     client:
         enabled: false
     instance:
-        appname: lotapp
-        instanceId: lotapp:${spring.application.instance_id:${random.value}}
+        appname: lotmicro
+        instanceId: lotmicro:${spring.application.instance-id:${random.value}}
 
 spring:
     application:
-        name: lotapp
+        name: lotmicro
     jackson:
         serialization.write_dates_as_timestamps: false
+    cache:
+        type: none
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:lotapp;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:mem:lotmicro;DB_CLOSE_DELAY=-1
         name:
         username:
         password:
@@ -35,7 +37,7 @@ spring:
         database-platform: io.github.jhipster.domain.util.FixedH2Dialect
         database: H2
         open-in-view: false
-        show-sql: true
+        show-sql: false
         hibernate:
             ddl-auto: none
             naming:
@@ -57,6 +59,8 @@ spring:
                   data: target/elasticsearch/data
     mail:
         host: localhost
+    messages:
+        basename: i18n/messages
     mvc:
         favicon:
             enabled: false
@@ -82,13 +86,13 @@ server:
 
 jhipster:
     async:
-        core-pool-size: 2
+        core-pool-size: 1
         max-pool-size: 50
         queue-capacity: 10000
     security:
         authentication:
             jwt:
-                secret: f2219d1ae98a7801f14212027a2eef541d86542d
+                secret: 6f32c3c723701d30e1d3a3769c7d23001fbf7b01
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration

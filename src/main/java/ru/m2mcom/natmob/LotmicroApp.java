@@ -1,5 +1,6 @@
 package ru.m2mcom.natmob;
 
+import ru.m2mcom.natmob.config.ApplicationProperties;
 import ru.m2mcom.natmob.config.DefaultProfileUtil;
 
 import io.github.jhipster.config.JHipsterConstants;
@@ -23,20 +24,20 @@ import java.util.Collection;
 
 @ComponentScan
 @EnableAutoConfiguration(exclude = {MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class})
-@EnableConfigurationProperties(LiquibaseProperties.class)
+@EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
 @EnableDiscoveryClient
-public class LotappApp {
+public class LotmicroApp {
 
-    private static final Logger log = LoggerFactory.getLogger(LotappApp.class);
+    private static final Logger log = LoggerFactory.getLogger(LotmicroApp.class);
 
     private final Environment env;
 
-    public LotappApp(Environment env) {
+    public LotmicroApp(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes lotapp.
+     * Initializes lotmicro.
      * <p>
      * Spring profiles can be configured with a program arguments --spring.profiles.active=your-active-profile
      * <p>
@@ -62,16 +63,22 @@ public class LotappApp {
      * @throws UnknownHostException if the local host name could not be resolved into an address
      */
     public static void main(String[] args) throws UnknownHostException {
-        SpringApplication app = new SpringApplication(LotappApp.class);
+        SpringApplication app = new SpringApplication(LotmicroApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
+        String protocol = "http";
+        if (env.getProperty("server.ssl.key-store") != null) {
+            protocol = "https";
+        }
         log.info("\n----------------------------------------------------------\n\t" +
                 "Application '{}' is running! Access URLs:\n\t" +
-                "Local: \t\thttp://localhost:{}\n\t" +
-                "External: \thttp://{}:{}\n\t" +
+                "Local: \t\t{}://localhost:{}\n\t" +
+                "External: \t{}://{}:{}\n\t" +
                 "Profile(s): \t{}\n----------------------------------------------------------",
             env.getProperty("spring.application.name"),
+            protocol,
             env.getProperty("server.port"),
+            protocol,
             InetAddress.getLocalHost().getHostAddress(),
             env.getProperty("server.port"),
             env.getActiveProfiles());
