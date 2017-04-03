@@ -1,0 +1,50 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "allNumbersRank",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "longOddEvenRank",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "shortOddEvenRank",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "shortHistorySumRank",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "longHistSumRank",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "summInHistRank",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "beenDrawnInPast",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "summInRecentHistRank",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "totalRank",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170403213631",
+    "entityTableName": "rank",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "microserviceName": "lotmicro",
+    "searchEngine": "elasticsearch",
+    "angularJSSuffix": "lotmicro"
+}

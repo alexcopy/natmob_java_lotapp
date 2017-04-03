@@ -1,0 +1,61 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "drawDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "draw",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "total",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "drawType",
+            "fieldType": "DrawType",
+            "fieldValues": "HISTORY,LOCALPLAY",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "strategy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "predictDataDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hash",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "drawid",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "game",
+            "fieldType": "GamesPlay",
+            "fieldValues": "EML,NAT,THB,HOT,EMLBONUS,THBBONUS,EMLBALLS,NATBALLS,THBBALLS"
+        }
+    ],
+    "changelogDate": "20170403213631",
+    "entityTableName": "math_expectation",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "microserviceName": "lotmicro",
+    "searchEngine": "elasticsearch",
+    "angularJSSuffix": "lotmicro"
+}

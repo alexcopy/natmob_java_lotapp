@@ -1,0 +1,189 @@
+
+entity WebGenerated{
+ /*json Format */
+  draw String,
+  sumB Integer,
+  sumS Integer,
+  hash String,
+  game  GamesPlay
+}
+
+
+entity History{
+  drawDate LocalDate required,
+  ball1 Integer,
+  ball2 Integer,
+  ball3 Integer,
+  ball4 Integer,
+  ball5 Integer,
+  ball6 Integer,
+  bonusBall1 Integer,
+  bonusBall2 Integer,
+  drawNumber Integer,
+  ballSet String,
+  wins String,
+  machine String,
+  sumB Integer,
+  sumS Integer,
+  jackpot Integer,
+  hash String,
+  machine String,
+  drawHash String,
+  game  GamesPlay
+}
+
+entity Rank{
+  allNumbersRank Double,
+  longOddEvenRank Double,
+  shortOddEvenRank Double,
+  shortHistorySumRank Double,
+  longHistSumRank Double,
+  summInHistRank Double,
+  beenDrawnInPast Double,
+  summInRecentHistRank Double,
+  totalRank  Double,
+}
+
+entity BonusRank{
+  summInRecentHistRank Double,
+  probabilityAndMO Double,
+  longOddEvenRank Double,
+  summAnalisisWithWeights Double,
+  inHistDueNotDueAnalisis Double,
+  allNumbersRank Double,
+  totalRank  Double,
+}
+
+
+entity DblTrplStats{
+  num1 Integer,
+  num2 Integer,
+  num3 Integer,
+  timesL Integer,
+  timesS Integer,
+  sum Integer,
+  evens Integer,
+  game   GamesPlay,
+}
+ entity MathExpectation{
+   drawDate LocalDate,
+   draw String required,
+   total Double,
+   drawType DrawType required,
+   strategy String,
+   predictDataDate String,
+   hash String,
+   drawid Integer required,
+   game  GamesPlay,
+ }
+
+entity LocalPlay{
+  drawDate LocalDate required,
+  /* json format */
+  draw String required,
+  sumB Integer,
+  sumS Integer,
+  drawType String,
+  gameType GameType,
+  hash String,
+  prize Double,
+  checked Integer,
+  bonusrankid  Integer,
+  game  GamesPlay,
+}
+
+
+entity GameRule{
+  ticketPrice Double required,
+ /* json format */
+  prizeTable String,
+ /* json format */
+  ballSet String,
+  /* json format */
+  bonusSet String,
+  /* json format */
+  daysPlay String,
+  /* json format */
+  ballRange String,
+  /* json format */
+  bonusRange String,
+}
+
+entity Game {
+ gameName GamesPlay
+}
+
+entity HitPredict{
+  number Integer,
+  drawPart DrawPartType,
+  currentSkips Integer,
+  averageSkips Integer,
+  drawsDue Integer,
+  allskips String,
+  status String,
+  game  GamesPlay
+}
+
+entity LocalGenerated{
+ /*json Format */
+  draw String,
+  sumB Integer,
+  sumS Integer,
+  hash String,
+  game GamesPlay
+}
+
+entity JpInHistory{
+  drawDate LocalDate required,
+  tableName DrawsTable,
+  tableid Integer,
+  game  GamesPlay,
+}
+enum DrawType{
+  HISTORY, LOCALPLAY
+}
+enum DrawsTable{
+  LOCAL, WEB
+}
+
+enum DrawPartType{
+  BALLS, BONUS
+}
+
+enum GamesPlay{
+  EML, NAT, THB, HOT, EMLBONUS, THBBONUS, EMLBALLS, NATBALLS, THBBALLS
+}
+
+enum GameType {
+  LOCAL, MANUAL, REJECTED, REAL
+}
+
+
+relationship OneToOne{
+  LocalPlay {rank} to Rank,
+  LocalPlay {bonusrank} to BonusRank
+}
+
+
+
+microservice * with lotmicro
+search * with elasticsearch
+
+
+paginate  History, LocalGenerated, HitPredict, WebGenerated with pagination
+paginate LocalPlay, MathExpectation with infinite-scroll
+
+ dto * with mapstruct
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with lotmicro
+
+/**
+yo jhipster:entity Rank --force &&
+yo jhipster:entity BonusRank --force &&
+yo jhipster:entity Game --force &&
+yo jhipster:entity GameRule --force &&
+yo jhipster:entity LocalPlay --force &&
+yo jhipster:entity History --force
+**/

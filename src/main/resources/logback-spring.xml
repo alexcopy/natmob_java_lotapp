@@ -22,7 +22,7 @@
     </appender>
 -->
 
-    <logger name="ru.m2mcom.natmob" level="#logback.loglevel#"/>
+    <logger name="ru.m2mcom.lotmicro" level="#logback.loglevel#"/>
 
     <logger name="io.github.jhipster" level="DEBUG"/>
 

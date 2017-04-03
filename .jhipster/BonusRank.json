@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "summInRecentHistRank",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "probabilityAndMO",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "longOddEvenRank",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "summAnalisisWithWeights",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "inHistDueNotDueAnalisis",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "allNumbersRank",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "totalRank",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170403213631",
+    "entityTableName": "bonus_rank",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "microserviceName": "lotmicro",
+    "searchEngine": "elasticsearch",
+    "angularJSSuffix": "lotmicro"
+}

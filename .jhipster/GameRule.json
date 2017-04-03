@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "ticketPrice",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "prizeTable",
+            "javadoc": "json format",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ballSet",
+            "javadoc": "json format",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bonusSet",
+            "javadoc": "json format",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "daysPlay",
+            "javadoc": "json format",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ballRange",
+            "javadoc": "json format",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bonusRange",
+            "javadoc": "json format",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170403213631",
+    "entityTableName": "game_rule",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "microserviceName": "lotmicro",
+    "searchEngine": "elasticsearch",
+    "angularJSSuffix": "lotmicro"
+}

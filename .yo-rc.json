@@ -1,27 +1,27 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "ru.m2mcom.natmob",
+      "packageName": "ru.m2mcom.lotmicro",
       "nativeLanguage": "en"
     },
     "jhipsterVersion": "4.1.1",
     "baseName": "lotmicro",
-    "packageName": "ru.m2mcom.natmob",
-    "packageFolder": "ru/m2mcom/natmob",
-    "serverPort": "8081",
+    "packageName": "ru.m2mcom.lotmicro",
+    "packageFolder": "ru/m2mcom/lotmicro",
+    "serverPort": "8084",
     "authenticationType": "jwt",
     "hibernateCache": "hazelcast",
     "clusteredHttpSession": false,
     "websocket": false,
     "databaseType": "sql",
     "devDatabaseType": "h2Disk",
-    "prodDatabaseType": "mariadb",
+    "prodDatabaseType": "postgresql",
     "searchEngine": "elasticsearch",
     "messageBroker": false,
     "serviceDiscoveryType": "eureka",
     "buildTool": "maven",
     "enableSocialSignIn": false,
-    "jwtSecretKey": "6f32c3c723701d30e1d3a3769c7d23001fbf7b01",
+    "jwtSecretKey": "c8a3762f5fd8e36b3603f6fc81e70ee8ce6d5f80",
     "enableTranslation": true,
     "applicationType": "microservice",
     "testFrameworks": [

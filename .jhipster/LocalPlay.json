@@ -1,0 +1,84 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "rank",
+            "otherEntityName": "rank",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "localPlay"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "bonusrank",
+            "otherEntityName": "bonusRank",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "localPlay"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "drawDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "draw",
+            "javadoc": "json format",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sumB",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "sumS",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "drawType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gameType",
+            "fieldType": "GameType",
+            "fieldValues": "LOCAL,MANUAL,REJECTED,REAL"
+        },
+        {
+            "fieldName": "hash",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prize",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "checked",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "bonusrankid",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "game",
+            "fieldType": "GamesPlay",
+            "fieldValues": "EML,NAT,THB,HOT,EMLBONUS,THBBONUS,EMLBALLS,NATBALLS,THBBALLS"
+        }
+    ],
+    "changelogDate": "20170403213631",
+    "entityTableName": "local_play",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "microserviceName": "lotmicro",
+    "searchEngine": "elasticsearch",
+    "angularJSSuffix": "lotmicro"
+}

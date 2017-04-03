@@ -5,6 +5,19 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170403213631_added_entity_JpInHistory.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170403213631_added_entity_BonusRank.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170403213631_added_entity_Game.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170403213631_added_entity_GameRule.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170403213631_added_entity_History.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170403213631_added_entity_HitPredict.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170403213631_added_entity_DblTrplStats.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170403213631_added_entity_LocalGenerated.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170403213631_added_entity_LocalPlay.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170403213631_added_entity_MathExpectation.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170403213631_added_entity_Rank.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170403213631_added_entity_WebGenerated.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20170403213631_added_entity_constraints_LocalPlay.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

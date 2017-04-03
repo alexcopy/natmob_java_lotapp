@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity History.
+    -->
+    <changeSet id="20170403213631-1" author="jhipster">
+        <createTable tableName="history">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="draw_date" type="date">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="ball_1" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ball_2" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ball_3" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ball_4" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ball_5" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ball_6" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="bonus_ball_1" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="bonus_ball_2" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="draw_number" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ball_set" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="wins" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="machine" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sum_b" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sum_s" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="jackpot" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="hash" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="draw_hash" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="game" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+</databaseChangeLog>
