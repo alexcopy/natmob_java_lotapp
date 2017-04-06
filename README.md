@@ -1,3 +1,6 @@
+{<img src="https://travis-ci.org/alexcopy/natmob_java_lotapp.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/alexcopy/natmob_java_lotapp]
+
+
 # lotmicro
 This application was generated using JHipster 4.1.1, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.1.1](https://jhipster.github.io/documentation-archive/v4.1.1).
 
